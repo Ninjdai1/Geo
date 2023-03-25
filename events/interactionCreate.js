@@ -1,6 +1,6 @@
-const { buttonList } = require('../interactions/buttons/index.js');
-const { modalList } = require('../interactions/modals/index.js');
-const { selectMenuList } = require('../interactions/selectmenus/index.js');
+const { buttonList } = require('../interactions/buttons/list.js');
+const { modalList } = require('../interactions/modals/list.js');
+const { selectMenuList } = require('../interactions/selectmenus/list.js');
 
 module.exports = {
     name: 'interactionCreate',
