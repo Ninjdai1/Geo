@@ -3,7 +3,7 @@ const { EmbedBuilder, ButtonBuilder, ActionRowBuilder, ButtonStyle } = require("
 module.exports = {
     async execute(interaction, client) {
         const localetext = interaction.locale in Object.keys(text) ? text[interaction.locale] : text['en-GB'];
-        if(!interaction.customId.split('_')[2] == interaction.user.id) return interaction.reply({ content: localetext.forbidden, ephemeral: true })
+        if(!interaction.customId.split('_')[2] == interaction.user.id) return interaction.reply({ content: localetext.forbidden, ephemeral: true });
         await interaction.deferUpdate();
         const row1 = new ActionRowBuilder()
         switch (interaction.customId.split('_')[1]) {
@@ -24,6 +24,10 @@ module.exports = {
 
 const text = {
     'en-GB': {
+        forbidden: "You cannot use this button !",
+        triviaDesc: "Trivia is a quiz whose solution you must find as soon as possible !\nPress START when ready or give people time to join using the JOIN button below !\n\n__Players :__",
+    },
+    'en-US': {
         forbidden: "You cannot use this button !",
         triviaDesc: "Trivia is a quiz whose solution you must find as soon as possible !\nPress START when ready or give people time to join using the JOIN button below !\n\n__Players :__",
     },

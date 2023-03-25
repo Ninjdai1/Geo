@@ -1,11 +1,13 @@
 const fs = require('fs');
 const Sequelize = require('sequelize');
-const { Client } = require("discord.js");
+const { Client, IntentsBitField } = require("discord.js");
 const { token, sequelizeCredentials } = require('./config.json');
 const { deploy_commands } = require('./functions.js');
 
 const client = new Client({
-    intents: []
+    intents: [
+		IntentsBitField.Flags.Guilds,
+	]
 });
 
 const sequelize = new Sequelize('database', sequelizeCredentials.username, sequelizeCredentials.password, {

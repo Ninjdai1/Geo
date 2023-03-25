@@ -29,6 +29,14 @@ const text = {
         alreadyjoined: "You're already in the player list !",
         joined: "You have been added to the player list !"
     },
+    'en-US': {
+        alreadyjoined: "You're already in the player list !",
+        joined: "You have been added to the player list !"
+    },
+    'fr': {
+        alreadyjoined: "Tu es déjà dans la liste des participants !",
+        joined: "Tu as été ajouté.e aux participants !"
+    },
 }
 
 const startBTN = new ButtonBuilder()
