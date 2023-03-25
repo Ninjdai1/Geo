@@ -13,7 +13,8 @@ module.exports = {
             'fr': 'Lancer une partie',
         }),
 	async execute(interaction) {
-        const localetext = interaction.locale in text ? text[interaction.locale] : text['en-GB'];
+        await interaction.deferReply();
+        const localetext = interaction.locale in Object.keys(text) ? text[interaction.locale] : text['en-GB'];
         const playEMBED = new EmbedBuilder()
             .setTitle(localetext.title)
             .setColor('Green')
@@ -21,22 +22,22 @@ module.exports = {
         const btns = new ActionRowBuilder()
             .setComponents([
                 new ButtonBuilder()
-                    .setCustomId(`game_trivia_${interaction.user.id}`)
+                    .setCustomId(`startGame_trivia_${interaction.user.id}`)
                     .setLabel('Trivia')
                     .setStyle(ButtonStyle.Success)
                     .setEmoji('⁉️'),
                 new ButtonBuilder()
-                    .setCustomId(`game_capital_${interaction.user.id}`)
+                    .setCustomId(`startGame_capital_${interaction.user.id}`)
                     .setLabel('Guess the capital')
                     .setStyle(ButtonStyle.Success)
                     .setEmoji('🏦'),
                 new ButtonBuilder()
-                    .setCustomId(`game_country_${interaction.user.id}`)
+                    .setCustomId(`startGame_country_${interaction.user.id}`)
                     .setLabel('Guess the country')
                     .setStyle(ButtonStyle.Success)
                     .setEmoji('🗺️'),
                 new ButtonBuilder()
-                    .setCustomId(`game_flag_${interaction.user.id}`)
+                    .setCustomId(`startGame_flag_${interaction.user.id}`)
                     .setLabel('Guess the flag')
                     .setStyle(ButtonStyle.Success)
                     .setEmoji('🏁'),

@@ -35,7 +35,7 @@ async function slashCommandLoad(client, commands) {
     try {
         console.log('Je commence à actualiser les commandes slash.');
         await rest.put(
-            Routes.applicationGuildCommands(clientId),
+            Routes.applicationCommands(clientId),
             { body: commands },
         );    
         console.log('Je viens de terminer de charger les commandes slash.');
